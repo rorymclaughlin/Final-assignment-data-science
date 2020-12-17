@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np 
 fish_data = pd.read_csv('gandhi_et_al_bouts.csv', skiprows = 4)
+
+#Need to define main function
+#Creating the bootstrap functions needed to create the confidence intervals of the data.
 def bootstrap_replicate_1d(data, func):
     """Generate bootstrap replicate of 1D data."""
     bs_sample = np.random.choice(data, len(data))
@@ -16,7 +19,7 @@ def draw_bs_reps(data, func, size=1):
         bs_replicates[i] = bootstrap_replicate_1d(data,func)
 
     return bs_replicates
-
+#Testing the confidene inttervals
 mean_wt = np.mean(bout_lengths_wt)
 mean_mut = np.mean(bout_lengths_mut)
 
