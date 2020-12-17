@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np 
-import matplotlib.pyplot as plt
 fish_data = pd.read_csv('gandhi_et_al_bouts.csv', skiprows = 4)
 def bootstrap_replicate_1d(data, func):
     """Generate bootstrap replicate of 1D data."""
